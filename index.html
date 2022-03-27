@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylemob.css" />
+
+    <title>Traning App</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3" defer></script>
+    <script src="main.js" defer></script>
+    <div id="app">
+      <header>
+        <div class="button">
+          <h1>Welcome to our traning app</h1>
+          <button type="button" @click="page = 'home'">Home</button>
+          <button type="button" @click="page = 'arms'">Arms</button>
+          <button type="button" @click="page = 'chest'">Chest</button>
+          <button type="button" @click="page = 'legs'">Legs</button>
+          <button type="button" @click="page = 'full_Body'">Full Body</button>
+        </div>
+      </header>
+      <main>
+        <div id="page">
+          <div id="home-page" v-if="page === 'home'">
+            <br />
+            <p>{{report }}</p>
+            <ul>
+              <li>
+                <button type="button" @click=" totalkalories()">
+                  Click here to show a report
+                </button>
+                <button type="button" @click=" clearHistory()">
+                  Clear History
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div id="arms-page" v-if="page === 'arms' ">
+            <ul>
+              <li id="single-arm">
+                <img :src="imageSrc_arms" :alt="imageAlt_arms" />
+                <p id="text">Arms</p>
+
+                <button
+                  id="start"
+                  type="button"
+                  @click="countDownTimer_armss()"
+                >
+                  start
+                </button>
+                <button
+                  id="stop"
+                  type="button"
+                  @click="countDownTimerstop_armss()"
+                >
+                  stopp
+                </button>
+                <button
+                  id="clear"
+                  type="button"
+                  @click="countDownTimerclear_armss()"
+                >
+                  clear
+                </button>
+                <button id="calc" type="button" @click="countarms()">
+                  calculate
+                </button>
+
+                <p>
+                  You trained : {{ countDown_armss }} sec & You burned :
+                  {{armss}}
+                </p>
+              </li>
+              <div class="rating">
+                <input type="radio" id="star1" /><label for="star1"></label>
+                <input type="radio" id="star2" /><label for="star2"></label>
+                <input type="radio" id="star3" /><label for="star3"></label>
+                <input type="radio" id="star4" /><label for="star4"></label>
+                <input type="radio" id="star5" /><label for="star5"></label>
+              </div>
+            </ul>
+          </div>
+
+          <div id="chest-page" v-if="page === 'chest'">
+            <ul>
+              <li id="single-push">
+                <img :src="imageSrc_chest" :alt="imageAlt_chest" />
+                <p>Chest</p>
+
+                <button type="button" @click="countDownTimer_push_upp()">
+                  start
+                </button>
+                <button type="button" @click="countDownTimerstop_push_upp()">
+                  stopp
+                </button>
+                <button type="button" @click="countDownTimerclear_push_upp()">
+                  clear
+                </button>
+                <button id="calc" type="button" @click="countpushupp()">
+                  calculate
+                </button>
+
+                <p>
+                  You trained : {{ countDown_push_upp }} sec & You burned :
+                  {{push_upp}}
+                </p>
+              </li>
+
+              <div class="rating">
+                <input type="radio" id="star1" /><label for="star1"></label>
+                <input type="radio" id="star2" /><label for="star2"></label>
+                <input type="radio" id="star3" /><label for="star3"></label>
+                <input type="radio" id="star4" /><label for="star4"></label>
+                <input type="radio" id="star5" /><label for="star5"></label>
+              </div>
+            </ul>
+          </div>
+
+          <div id="legs-page" v-if="page === 'legs'">
+            <ul>
+              <li id="single-legs">
+                <img :src="imageSrc_jumpSquat" :alt="imageAlt_jumpSquat" />
+                <p>Legs</p>
+
+                <button type="button" @click="countDownTimer_leg()">
+                  start
+                </button>
+                <button type="button" @click="countDownTimerstop_leg()">
+                  stopp
+                </button>
+                <button type="button" @click="countDownTimerclear_leg()">
+                  clear
+                </button>
+                <button id="calc" type="button" @click="countleg()">
+                  calculate
+                </button>
+
+                <p>
+                  You trained : {{ countDown_leg }} sec & You burned :
+                  {{legsquat}}
+                </p>
+              </li>
+              <div class="rating">
+                <input type="radio" id="star1" /><label for="star1"></label>
+                <input type="radio" id="star2" /><label for="star2"></label>
+                <input type="radio" id="star3" /><label for="star3"></label>
+                <input type="radio" id="star4" /><label for="star4"></label>
+                <input type="radio" id="star5" /><label for="star5"></label>
+              </div>
+            </ul>
+          </div>
+
+          <div id="full_Body-page" v-if="page === 'full_Body'">
+            <ul>
+              <li id="single-fullBody">
+                <img :src="imageSrc_fullBody" :alt=" imageAlt_fullBody" />
+                <p>Full Body</p>
+
+                <button type="button" @click="countDownTimer_full_body()">
+                  start
+                </button>
+                <button type="button" @click="countDownTimerstop_full_body()">
+                  stopp
+                </button>
+                <button type="button" @click="countDownTimerclear_full_body()">
+                  clear
+                </button>
+                <button id="calc" type="button" @click="countfullbody()">
+                  calculate
+                </button>
+
+                <p>
+                  You trained : {{ countDown_full_body }} sec & You burned :
+                  {{fullbody}}
+                </p>
+              </li>
+              <div class="rating">
+                <input type="radio" id="star1" /><label for="star1"></label>
+                <input type="radio" id="star2" /><label for="star2"></label>
+                <input type="radio" id="star3" /><label for="star3"></label>
+                <input type="radio" id="star4" /><label for="star4"></label>
+                <input type="radio" id="star5" /><label for="star5"></label>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <footer>By: Abdulaziz & Sinah Copyright © - 2022</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("2.jpg");
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 10px auto;
+}
+
+.button {
+  width: 75%;
+  text-align: center;
+  margin: 10px auto;
+  background: rgb(106, 154, 132);
+  box-shadow: 0 8px 32px 0 rgba(92, 155, 131, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.button button {
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgb(106, 154, 132);
+  box-shadow: 0 8px 32px 0 rgba(92, 155, 131, 0.37);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button button:focus {
+  padding: 15px;
+  background: skyblue;
+}
+
+main button {
+  background: rgb(106, 154, 132);
+  box-shadow: 0 8px 32px 0 rgba(92, 155, 131, 0.37);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 34px;
+  color: #fff;
+  margin: 10px auto;
+  width: 74%;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  margin: 10px auto;
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+  background-color: skyblue;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.8), 0 0 20px 0 rgb(0, 0, 0, .3);
+}
+
+main h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+#home-page p {
+  color: rgb(106, 154, 132);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 20px;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+#home-page button li {
+  margin-left: 25px;
+}
+
+#single-legs p,
+#single-fullBody p,
+#single-push p,
+#single-arm P {
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  background: rgb(106, 154, 132);
+  padding: 10px;
+  margin: 15px;
+}
+
+ul p {
+  text-align: center;
+  padding: 5px;
+}
+
+ul {
+  text-align: center;
+  padding: 20px;
+}
+
+li {
+  display: inline-block;
+  border-radius: 10px;
+  background: #fff;
+}
+
+img {
+  border-radius: 10px;
+  width: 1100px;
+}
+
+button:hover {
+  color: rgb(50, 99, 83);
+  border: 1px solid;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+footer {
+  color: #fff;
+  font-size: 34px;
+  width: 74%;
+  margin: 10px auto;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  background: rgb(106, 154, 132);
+  box-shadow: 0 8px 32px 0 rgba(92, 155, 131, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.rating {
+  margin: 50px auto;
+  width: 400px;
+  height: 20px;
+}
+
+.rating > * {
+  float: right;
+}
+
+@-webkit-keyframes pluse {
+  50% {
+    color: #5e5e5e;
+    text-shadow: 0 0 15px #777777;
+  }
+}
+
+@keyframes pluse {
+  50% {
+    color: #5e5e5e;
+    text-shadow: 0 0 15px #777777;
+  }
+}
+
+.rating label {
+  height: 40px;
+  width: 20%;
+  position: relative;
+  cursor: pointer;
+}
+
+.rating label:nth-of-type(5):after {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.rating label:nth-of-type(4):after {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.rating label:nth-of-type(3):after {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+.rating label:nth-of-type(2):after {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.rating label:nth-of-type(1):after {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.rating label::after {
+  transition: all 0.4s ease-out;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  content: "\2605";
+  color: #444;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  -webkit-animation: 1s pluse ease;
+  animation: 1s pluse ease;
+}
+
+.rating label:hover::after {
+  color: #5e5e5e;
+  text-shadow: 0 0 15px #5e5e5e;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating input:checked + label::after,
+.rating input:checked ~ label::after {
+  content: "\2605";
+  color: #f58233;
+  text-shadow: 0 0 20px #f58233;
+}
+
+.rating input:checked + label::-moz-focus-outer,
+.rating input:checked ~ label::-moz-focus-outer {
+  color: #0b0b0a;
+  text-shadow: 0 0 20px #838383;
+}
+
+
+
+
